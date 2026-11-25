@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block  content %}
+    <div class="container" style="max-width: 400px; margin-top: 50px;">
+        <h2>Iniciar Sesión</h2>
+
+        {% if form.errors %}
+            <div class="alert" style="color: red; margin-bottom: 15px;">
+                Tu usuario y contraseña no coinciden. Por favor, inténtalo de nuevo.
+            </div>
+        {% endif %}
+
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button  class = "btn" type="submit">Entrar</button>
+        </form>
+
+    </div>
+
+{% endblock %}

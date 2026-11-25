@@ -8,12 +8,26 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+
+
+
     <header>
         <img src="{% static 'images/logoitiid.png' %}" alt="">
         <nav>
             <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'workshop:list' %}">Talleres</a>
+            <a href="{% url 'workshops:list' %}">Talleres</a>
+            {% if user.is_authenticated %}  
+            <span>Hola, {{ user.username }}</span>
+            
+            <!-- Logout obligatorio vía POST -->
+            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button class= "btn" type="submit">Cerrar sesión</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+        {% endif %}
         </nav>
     </header>
     <div class="container">

@@ -12,10 +12,6 @@ body {
     min-height: 100vh;
 }
 
-h1 {
-  padding: 20px;
-}
-
 #portada {
   display: block;
   width: 100%;
@@ -26,7 +22,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
 header img {
@@ -39,10 +35,12 @@ header nav a {
   font-weight: normal;
   color: white;
   margin-left: 20px;
+  display: inline-block;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
 }
-
 header nav a:hover {
-  font-weight: bold;
+  border-bottom: 2px solid white;
 }
 
 .container {
@@ -52,47 +50,56 @@ header nav a:hover {
   text-align: center;
 }
 
-.container-workshop {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-
-  .card {
-      width: 400px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(112, 219, 240, 0.2);
-      margin-bottom: 20px;
-  }
-
-  .card .card-header {
-      color: white;
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px 10px 0 0;
-      padding: 20px 10px;
-  }
-
-  .card .card-body {
-      padding: 10px;
-
-      .btn {
-        margin: 20px 0;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
+.container-workshop{
+        display: flex;
         width: 100%;
-        padding: 10px 0;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.5);
-        box-shadow: 0 4px 8px rgba(112, 219, 240, 0.2);
-      }
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 10px;
 
-      .btn:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 4px 8px rgba(112, 219, 240, 0.5);
-      }
+    .card {
+        width: 400px;
+        /* border: 1px solid rgba(255,255,255,0.3); */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(112,219,240,0.2);
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .card .card-header {
+        color: white;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px 10px 0 0;
+        padding: 20px 10px;
+    }
+    .card .card-body {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: auto;
+
+
+    }
   }
-}
+
+  .btn {
+          margin: 20px auto;
+          text-decoration: none;
+          color: white;
+          display: inline-block;
+          cursor: pointer;
+          border: none;
+          width: 200px;
+          /* width: 80%; */
+          padding: 20px 0;
+          border-radius: 10px;
+          background-color: rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 8px rgba(252, 254, 255, 0.2);
+          transition: background-color 0.5s ease, box-shadow 0.5s ease;
+        }
+        .btn:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(112,219,240,0.2);
+        }

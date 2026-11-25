@@ -63,6 +63,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -70,6 +71,11 @@ TEMPLATES = [
         },
     },
 ]
+
+# Redirecciones de autenticación (llevan a la raíz "/")
+LOGIN_URL = 'login'               # Nombre de la ruta si alguien intenta entrar a una vista protegida
+LOGIN_REDIRECT_URL = '/'          # Destino tras iniciar sesión con éxito
+LOGOUT_REDIRECT_URL = '/'         # Destino tras cerrar sesión con éxito
 
 WSGI_APPLICATION = 'congreso.wsgi.application'
 
